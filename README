@@ -1,3 +1,6 @@
+This is a Homework project for CSE 506 Fall 17 course under Prof.M Ferdman.
+The goal of this project is to be able to print to each pixel of the graphical layout given the below setup.
+
 * The provided Makefile:
   1) builds a kernel
   2) copies it into rootfs/boot/kernel/kernel
