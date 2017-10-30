@@ -28,13 +28,15 @@ __asm__ __volatile__ ("STI");
 }
 
 void isr33(){
-	kprintf("----------");
     __asm__ __volatile__ ("pushq %%rax" : : :);
     __asm__ __volatile__ ("pushq %%rcx; pushq %%rdx; pushq %%rsi; pushq %%rdi; pushq %%r8; pushq %%r9; pushq %%r10; pushq %%r11" : : :);
     __asm__ __volatile__ ("CLI");
     uint8_t ret;
     __asm__ __volatile__ ("inb %1, %0" : "=a" (ret) : "Nd" ((uint64_t)0x60));
-    kprintf("isr33 - %d\n", ret);
+    if (ret != 0){
+	__asm__ __volatile__ ("inb %1, %0" : "=a" (ret) : "Nd" ((uint64_t)0x60));
+	kprintf("%d ", ret);
+    }
     __asm__ __volatile__ ("popq %%r11; popq %%r10; popq %%r9; popq %%r8; popq %%rdi; popq %%rsi; popq %%rdx; popq %%rcx; popq %%rax" : : :);
     __asm__ __volatile__ ("outb %0, %1" : : "a"((uint8_t)0x20), "Nd"((uint64_t)0x20));
     __asm__ __volatile__ ("STI");
@@ -52,14 +54,14 @@ static void init_idt()
     //idt_ptr.base  = (uint64_t)idt_entries;
 
    for(int i=0; i<32; i++){
-//    idt_set_gate( i, (uint64_t)&isr0 , 0x08, 0x8E);
+	idt_set_gate( i, (uint64_t)&isr0 , 0x08, 0x8E);
     }
 
     idt_set_gate(32, (uint64_t)&isr32, 0x08, 0x8E);
     idt_set_gate(33, (uint64_t)&isr33, 0x08, 0x8E);
 
     for(int i = 34; i<256; i++){
-  // 	idt_set_gate( i, (uint64_t)&isr0 , 0x08, 0x8E);
+   	idt_set_gate( i, (uint64_t)&isr0 , 0x08, 0x8E);
     }
     idt_ptr.limit = sizeof(struct idt_entry_struct) * 256 -1;
     idt_ptr.base  = (uint64_t)idt_entries;
