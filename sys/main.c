@@ -18,7 +18,7 @@ void start(uint32_t *modulep, void *physbase, void *physfree)
 	setToGraphicalMode();
 	clearScreen();
 	PrintToPixel(120, 50, 12); // (x, y, color)
-	PrintSomethingToPixel();
+	PrintSomethingToPixel(); // Prints the letter 'H'
 
   while(1) ;
 }

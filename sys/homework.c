@@ -1,3 +1,5 @@
+/* Referenced from : http://files.osdev.org/mirrors/geezer/osd/graphics/modes.c */
+
 #include <sys/homework.h>
 #include <sys/kprintf.h>
 #include <sys/defs.h>
@@ -162,5 +164,16 @@ void clearScreen(){
 }
 
 void PrintSomethingToPixel(){
-//	uint8_t *VGA = (uint8_t *)0xA0000;
+	int i, color = 12;
+	for(i=0; i<20; i++){
+		PrintToPixel(240, 150+i, color);
+	}
+
+	for(i=0; i<20; i++){
+                PrintToPixel(247, 150+i, color);
+        }
+
+	for(i=0; i<8; i++){
+                PrintToPixel(240+i, 160, color);
+        }
 }
