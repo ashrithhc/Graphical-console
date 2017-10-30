@@ -162,5 +162,5 @@ void clearScreen(){
 }
 
 void PrintSomethingToPixel(){
-	uint8_t *VGA = (uint8_t *)0xA0000;
+//	uint8_t *VGA = (uint8_t *)0xA0000;
 }
