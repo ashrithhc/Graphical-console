@@ -1,4 +1,11 @@
-/* Referenced from : http://files.osdev.org/mirrors/geezer/osd/graphics/modes.c */
+/* 
+References : 
+	http://wiki.osdev.org/VGA_Resources
+	http://www.osdever.net/FreeVGA/vga/vgamem.htm
+	http://forum.osdev.org/viewtopic.php?f=1&t=31394&hilit=pixel+vga+mode
+	http://forum.osdev.org/viewtopic.php?f=1&t=31394&p=272183&hilit=pixel+vga+mode#p272183
+	http://files.osdev.org/mirrors/geezer/osd/graphics/modes.c 
+*/
 
 #include <sys/homework.h>
 #include <sys/kprintf.h>
