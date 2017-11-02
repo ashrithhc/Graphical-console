@@ -5,6 +5,7 @@
 #include <sys/ahci.h>
 #include <sys/idt.h>
 #include <sys/homework.h>
+#include <sys/hwfont.h>
 
 #define INITIAL_STACK_SIZE 4096
 uint8_t initial_stack[INITIAL_STACK_SIZE]__attribute__((aligned(16)));
@@ -14,12 +15,21 @@ extern char kernmem, physbase;
 void start(uint32_t *modulep, void *physbase, void *physfree)
 {
  while(modulep[0] != 0x9001) modulep += modulep[1]+2;
-
 	setToGraphicalMode();
 	clearScreen();
-	PrintToPixel(120, 50, 12); // (x, y, color)
-	PrintSomethingToPixel(); // Prints the letter 'H'
-
+	hwfont("Hino\n");
+	hwfont("Namaste\n");
+	hwfont("This character %c\n", 'p');
+	hwfont("One %d\n", 133);
+	hwfont("This string %s\n", "Amazing");
+	hwfont("133 to hexa is %x\n", 133);
+	hwfont("Pointer %p\n", 133);
+	hwfont("something\n");
+	hwfont("another thing\n");
+	hwfont("Lets keep typing\n");
+	hwfont("Yes baby yes\n");
+	hwfont("This will be the last line\n");
+	hwfont("This will send Hino home\n");
   while(1) ;
 }
 
