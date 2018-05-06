@@ -1,5 +1,18 @@
-This is a Homework project for CSE 506 Fall 17 course under Prof.M Ferdman.
-The goal of this project is to be able to print to each pixel of the graphical layout given the below setup.
+## Graphical console
+
+The goal of this project is to be able to print to each pixel on the screen via video memory given the below setup and to implement a font to test.
+
+The code exposes the following API :
+
+    hwfont(const char *fmt, ...) - Similar to "kprintf()" or "printf()" that prints to the graphical console using the font included.
+    
+    PrintToPixel(int x, int y, int color) - Populates pixel at <code>(x, y)</code> with color <code color</code>.
+    
+    PrintACharacter(char ch, int x, int y, int color) - Prints a character <code>ch</code> with color <code>color</code> and the top-left part of the character at <code>(x, y)</code>.
+
+#### Set-up below is provided as part of CSE 506 under Prof. Michael Ferdman
+
+https://compas.cs.stonybrook.edu/courses/cse506-operating-systems-fall-17/
 
 * The provided Makefile:
   1) builds a kernel
