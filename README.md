@@ -6,9 +6,9 @@ The code exposes the following API :
 
     hwfont(const char *fmt, ...) - Similar to "kprintf()" or "printf()" that prints to the graphical console using the font included.
     
-    PrintToPixel(int x, int y, int color) - Populates pixel at <code>(x, y)</code> with color <code color</code>.
+    PrintToPixel(int x, int y, int color) - Populates pixel at (x, y) with color "color".
     
-    PrintACharacter(char ch, int x, int y, int color) - Prints a character <code>ch</code> with color <code>color</code> and the top-left part of the character at <code>(x, y)</code>.
+    PrintACharacter(char ch, int x, int y, int color) - Prints a character "ch" with color "color" and the top-left part of the character at (x, y).
 
 #### Set-up below is provided as part of CSE 506 under Prof. Michael Ferdman
 
