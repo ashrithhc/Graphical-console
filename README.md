@@ -1,5 +1,7 @@
 ## Graphical console
 
+<img src="./images/screenshot.png" width="50%"/>
+
 The goal of this project is to be able to print to each pixel on the screen via video memory given the below setup and to implement a font to test.
 
 The code exposes the following API :
