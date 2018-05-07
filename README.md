@@ -2,7 +2,9 @@
 
 <img src="./images/screenshot.png" width="50%"/>
 
-The goal of this project is to be able to print to each pixel on the screen via video memory given the below setup and to implement a font to test.
+### GOAL 
+
+Print to each pixel on the screen via video memory given the below setup and to implement a font to test.
 
 The code exposes the following API :
 
@@ -12,7 +14,7 @@ The code exposes the following API :
     
     PrintACharacter(char ch, int x, int y, int color) - Prints a character "ch" with color "color" and the top-left part of the character at (x, y).
 
-#### Set-up below is provided as part of CSE 506 under Prof. Michael Ferdman
+### Setup
 
 https://compas.cs.stonybrook.edu/courses/cse506-operating-systems-fall-17/
 
@@ -39,3 +41,5 @@ gdb ./kernel
 
 At the (gdb) prompt, connect with:
 target remote localhost:9999
+
+
