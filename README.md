@@ -1,6 +1,6 @@
 ## Graphical console
 
-<img src="./images/screenshot.png" width="50%"/>
+<img src="./images/screenshot.png" width="80%"/>
 
 ### GOAL 
 
